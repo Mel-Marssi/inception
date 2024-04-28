@@ -3,7 +3,7 @@ FROM debian:11
 
 # Install necessary packages
 RUN apt-get update && \
-    apt-get install -y nginx openssl
+    apt-get install -y nginx openssl xdg-utils
 
 # Create a directory for SSL certificates
 RUN mkdir /etc/nginx/ssl
