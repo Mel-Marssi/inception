@@ -1,11 +1,11 @@
-systemctl mariadb start
-systemctl mariadb enable
 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
-mysql -u root -e "CREATE USER IF NOT EXISTS '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASS';"
-mysql -u root -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';"
+service mariadb start
+service mariadb enable
+
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS melmars;"
+mysql -u root -e "CREATE USER IF NOT EXISTS 'Mourad'@'localhost' IDENTIFIED BY '1234';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON melmars.* TO 'Mourad'@'localhost';"
 mysql -u root -e "FLUSH PRIVILEGES;"
 
-systemctl mariadb stop
-systemctl mariadb start
-systemctl mariadb enable
+service mariadb stop
+service mariadb start
