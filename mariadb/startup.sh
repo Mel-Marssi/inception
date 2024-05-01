@@ -1,6 +1,5 @@
 
 service mariadb start
-service mariadb enable
 
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS melmars;"
 mysql -u root -e "CREATE USER IF NOT EXISTS 'Mourad'@'localhost' IDENTIFIED BY '1234';"

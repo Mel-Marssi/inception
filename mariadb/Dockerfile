@@ -4,4 +4,5 @@ RUN apt-get update -y && apt-get upgrade -y &&\
 	apt-get install -y systemctl
 COPY startup.sh /startup.sh
 RUN chmod +x /startup.sh
+RUN ./startup.sh
 CMD ["sleep", "infinity"]
