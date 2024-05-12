@@ -4,5 +4,5 @@ RUN apt-get update -y && apt-get upgrade -y &&\
 COPY startup.sh /startup.sh
 # COPY 50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 RUN chmod +x /startup.sh
-RUN ./startup.sh
+# RUN ./startup.sh
 CMD ["sleep", "infinity"]
