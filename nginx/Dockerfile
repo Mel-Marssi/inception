@@ -11,6 +11,4 @@ RUN rm /etc/nginx/sites-enabled/default
 
 COPY nginx.conf /etc/nginx/sites-enabled/
 
-EXPOSE 80 443
-
 CMD ["nginx", "-g", "daemon off;"]

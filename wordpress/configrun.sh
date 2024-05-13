@@ -1,4 +1,5 @@
 #!/bin/bash
+sleep 10
 cd /var/www/html
 wp core download --allow-root
 wp config create --dbhost=mariadb  --dbname=melmars --dbuser=Mourad --dbpass=1234 --allow-root
