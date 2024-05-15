@@ -1,8 +1,8 @@
 #!/bin/bash
 service mariadb start
-mysql -e "CREATE DATABASE IF NOT EXISTS melmars;"
-mysql -e "CREATE USER IF NOT EXISTS 'Mourad'@'%' IDENTIFIED BY '1234';"
-mysql -e "GRANT ALL PRIVILEGES ON melmars.* TO 'Mourad'@'%' IDENTIFIED BY '1234';"
-mysql -e "FLUSH PRIVILEGES;"
+echo "CREATE DATABASE IF NOT EXISTS $DB_NAME;" | mariadb
+echo "CREATE USER IF NOT EXISTS '$USER'@'%' IDENTIFIED BY '$PASSWORD';" | mariadb
+echo "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$USER'@'%' IDENTIFIED BY '$PASSWORD';" | mariadb
+echo "FLUSH PRIVILEGES;" | mariadb
 service mariadb stop
 exec mysqld_safe

@@ -5,7 +5,7 @@ RUN apt-get update && \
 
 RUN mkdir /etc/nginx/ssl
 
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -subj "/C=MA/ST=Rehamna/L=Benguerir/O=UM6P/CN=localhost"
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -subj "/C=MA/ST=Rehamna/L=Benguerir/O=UM6P/CN=mel-mars.42.fr"
 
 RUN rm /etc/nginx/sites-enabled/default
 

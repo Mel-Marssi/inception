@@ -12,5 +12,5 @@ COPY configrun.sh configrun.sh
 RUN chmod +x configrun.sh
 RUN mkdir -p /var/www/html
 RUN chmod -R 777 /var/www/html
-# RUN wp user create mel-mars mel-mars@student.1337.ma --user_pass=1234 --allow-root
+
 CMD ["./configrun.sh"]

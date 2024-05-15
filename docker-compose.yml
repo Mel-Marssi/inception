@@ -25,23 +25,23 @@ services:
       - .env
     networks:
       - docker_network
-    # volumes:
-    #   - mariadbData:/var/lib/mysql
+    volumes:
+      - mariadbData:/var/lib/mysql
   wordpress:
-      build: ./wordpress
-      container_name: wordpress
-      image: wordpress
-      ports:
-        - 9000:9000
-      restart: always
-      env_file:
-        - .env
-      networks:
-        - docker_network
-      depends_on:
-        - mariadb
-      volumes:
-        - dataContainer:/var/www/html
+    build: ./wordpress
+    container_name: wordpress
+    image: wordpress
+    ports:
+      - 9000:9000
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - docker_network
+    depends_on:
+      - mariadb
+    volumes:
+      - dataContainer:/var/www/html
 networks:
   docker_network:
     name: docker_network
