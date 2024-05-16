@@ -12,5 +12,5 @@ COPY configrun.sh configrun.sh
 RUN chmod +x configrun.sh
 RUN mkdir -p /var/www/html
 RUN chmod -R 777 /var/www/html
-
+RUN rm -rf wp-config.php
 CMD ["./configrun.sh"]

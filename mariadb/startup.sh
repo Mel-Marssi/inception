@@ -1,5 +1,7 @@
 #!/bin/bash
+
 service mariadb start
+sleep 2
 echo "CREATE DATABASE IF NOT EXISTS $DB_NAME;" | mariadb
 echo "CREATE USER IF NOT EXISTS '$USER'@'%' IDENTIFIED BY '$PASSWORD';" | mariadb
 echo "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$USER'@'%' IDENTIFIED BY '$PASSWORD';" | mariadb
