@@ -1,6 +1,6 @@
 services:
   nginx:
-    build: ./nginx
+    build: ./requirements/nginx
     container_name: nginx
     image: nginx
     ports:
@@ -15,7 +15,7 @@ services:
     volumes:
       - dataContainer:/var/www/html
   mariadb:
-    build: ./mariadb
+    build: ./requirements/mariadb
     container_name: mariadb
     image: mariadb
     ports:
@@ -28,7 +28,7 @@ services:
     volumes:
       - mariadbData:/var/lib/mysql
   wordpress:
-    build: ./wordpress
+    build: ./requirements/wordpress
     container_name: wordpress
     image: wordpress
     ports:
@@ -45,7 +45,6 @@ services:
 networks:
   docker_network:
     name: docker_network
-    driver: bridge
 volumes:
   dataContainer:
     driver: local
