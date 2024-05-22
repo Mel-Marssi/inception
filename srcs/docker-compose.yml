@@ -1,5 +1,5 @@
 services:
-  nginx:
+  service_nginx:
     build: ./requirements/nginx
     container_name: nginx
     image: nginx
@@ -14,7 +14,7 @@ services:
       - wordpress
     volumes:
       - dataContainer:/var/www/html
-  mariadb:
+  service_mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
     image: mariadb
@@ -39,7 +39,7 @@ services:
     networks:
       - docker_network
     depends_on:
-      - mariadb
+      - service_mariadb
     volumes:
       - dataContainer:/var/www/html
 networks:
