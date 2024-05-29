@@ -11,15 +11,13 @@ services:
     networks:
       - docker_network
     depends_on:
-      - wordpress
+      - service_wordpress
     volumes:
       - dataContainer:/var/www/html
   service_mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
     image: mariadb
-    ports:
-      - 3306:3306
     restart: always
     env_file:
       - .env
@@ -27,12 +25,10 @@ services:
       - docker_network
     volumes:
       - mariadbData:/var/lib/mysql
-  wordpress:
+  service_wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
     image: wordpress
-    ports:
-      - 9000:9000
     restart: always
     env_file:
       - .env
