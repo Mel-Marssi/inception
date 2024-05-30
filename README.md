@@ -2,7 +2,7 @@
 
 This project involves setting up a small infrastructure composed of various services, each following specific rules.
 
-Setup a containers of:
+Setup three containers of:
 
     -NGINX with TLSv1.2 or TLSv1.3.
   
