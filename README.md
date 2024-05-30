@@ -1,5 +1,8 @@
 *****Knowledge of system administration by using Docker*****
 
+![containers](https://github.com/Mel-Marssi/inception/blob/main/N_W_M.png)
+
+
 This project involves setting up a small infrastructure composed of various services, each following specific rules.
 
 Setup three containers of:
